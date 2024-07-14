@@ -25,9 +25,9 @@ export default function AddProduct({ addProduct }) {
   };
 
   return (
-    <div className="min-h-screen bg-f6f6f9 p-8">
-      <form onSubmit={handleSubmit} className="bg-white p-4 rounded-lg shadow-md max-w-md mx-auto">
-        <h2 className="text-lg font-semibold mb-4">Add New Product</h2>
+    <div className="min-h-screen bg-[#F6F6F9] p-4 md:p-8 flex items-center justify-center">
+      <form onSubmit={handleSubmit} className="bg-white p-4 md:p-8 rounded-lg shadow-md w-full max-w-md">
+        <h2 className="text-lg md:text-xl font-semibold mb-4">Add New Product</h2>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">
             Title
@@ -94,7 +94,7 @@ export default function AddProduct({ addProduct }) {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none"
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none w-full"
         >
           Add Product
         </button>

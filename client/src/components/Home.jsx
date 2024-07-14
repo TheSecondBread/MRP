@@ -31,9 +31,9 @@ export default function Home() {
 
   return (
     <div className="bg-[#F6F6F9] w-full h-full flex justify-center">
-      <div>
-        <div className="w-[60vw] h-[40vh] bg-white mt-10">
-          <div className="border-b-2 p-4 flex items-center">
+      <div className="flex flex-col items-center w-full">
+        <div className="w-full max-w-[1200px] bg-white mt-10">
+          <div className="border-b-2 p-4 flex items-center justify-between">
             <h1 className="text-[20px] font-bold">Overview</h1>
             <nav className="hidden md:flex md:flex-grow md:justify-center font-bold">
               <a
@@ -64,7 +64,7 @@ export default function Home() {
               </a>
             </nav>
           </div>
-          <div className="flex justify-center p-4 mt-7 gap-20">
+          <div className="flex justify-around p-4 mt-7 gap-4 md:gap-20 flex-wrap">
             <div className="text-center">
               <h1 className="font-extrabold text-[40px] mb-3 text-blue-700">
                 {data[activeTab].orders}
@@ -93,53 +93,30 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="w-[60vw] h-[40vh] bg-white">
-          <div className="w-[60vw] h-[40vh] bg-white mt-10">
-            <div className="border-b-2 p-4 flex items-center">
-              <h1 className="text-[20px] font-bold">Products</h1>
-            </div>
-            <div className="p-4">
-              <div className="flex flex-col">
-                <div className="flex items-center justify-between p-2 bg-gray-100 mb-2">
+        <div className="w-full max-w-[1200px] bg-white mt-10">
+          <div className="border-b-2 p-4 flex items-center">
+            <h1 className="text-[20px] font-bold">Products</h1>
+          </div>
+          <div className="p-4">
+            <div className="flex flex-col gap-2">
+              {["Shirt", "Pant", "Watch"].map((product, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-between p-2 bg-gray-100 mb-2"
+                >
                   <div>
-                    <span className="text-lg font-semibold">Shirt</span>
+                    <span className="text-lg font-semibold">{product}</span>
                   </div>
                   <div className="flex items-center">
                     <span className="text-sm text-gray-500 mr-4">
-                      Ordered: 50
+                      Ordered: {data[activeTab].orders}
                     </span>
                     <span className="text-sm text-gray-500">
-                      Units Left: 50
+                      Units Left: {data[activeTab].delivered}
                     </span>
                   </div>
                 </div>
-                <div className="flex items-center justify-between p-2 bg-gray-100 mb-2">
-                  <div>
-                    <span className="text-lg font-semibold">Pant</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="text-sm text-gray-500 mr-4">
-                      Ordered: 30
-                    </span>
-                    <span className="text-sm text-gray-500">
-                      Units Left: 20
-                    </span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between p-2 bg-gray-100 mb-2">
-                  <div>
-                    <span className="text-lg font-semibold">Watch</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="text-sm text-gray-500 mr-4">
-                      Ordered: 20
-                    </span>
-                    <span className="text-sm text-gray-500">
-                      Units Left: 30
-                    </span>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
