@@ -3,8 +3,9 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import SendMessage from "./components/SendMessage";
 import Sidebar from "./components/Sidebar";
-import MyProduct from "./components/MyProduct"; 
+import MyProduct from "./components/MyProduct";
 import AddProduct from "./components/AddProduct";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   const [activeComponent, setActiveComponent] = useState("Home");
@@ -15,10 +16,10 @@ export default function App() {
         return <Home />;
       case "Send Message":
         return <SendMessage />;
-      case "My Products": 
+      case "My Products":
         return <MyProduct />;
       case "Add new Product":
-        return <AddProduct/>
+        return <AddProduct />;
       default:
         return <Home />;
     }
@@ -26,12 +27,11 @@ export default function App() {
 
   return (
     <>
+      <Analytics />
       <Navbar />
       <div className="flex">
         <Sidebar setActiveComponent={setActiveComponent} />
-        <div className="flex-1 p-5 bg-[#F6F6F9]">
-          {renderComponent()}
-        </div>
+        <div className="flex-1 p-5 bg-[#F6F6F9]">{renderComponent()}</div>
       </div>
     </>
   );

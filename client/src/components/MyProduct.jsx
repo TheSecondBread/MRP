@@ -17,7 +17,7 @@ export default function MyProduct() {
       unitsLeft: 15,
     },
     {
-      title: "Men's Formal Pants",
+      title: "Men's Pants",
       price: "600RS",
       unit: "Each",
       image: "pants.jpg",
